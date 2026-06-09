@@ -1,0 +1,18 @@
+{
+  "name": "petstore-api-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automacao de testes da Swagger Petstore API com Playwright e TypeScript.",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test --project=api",
+    "test:headed": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "latest",
+    "typescript": "latest"
+  }
+}
