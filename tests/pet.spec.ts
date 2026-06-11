@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import {
   expectPetContract,
+  expectPetNotFound,
   expectPetsWithStatus,
 } from '../src/assertions/pet.assertions';
 import { PetClient } from '../src/clients/pet.client';
@@ -63,9 +64,6 @@ test.describe('Petstore - pets', () => {
     const response = await client.getById(9_000_000_000_000_000);
 
     expect(response.status()).toBe(404);
-    expect(await response.json()).toMatchObject({
-      type: 'error',
-      message: 'Pet not found',
-    });
+    expectPetNotFound(await response.text());
   });
 });

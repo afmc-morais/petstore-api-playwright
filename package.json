@@ -6,6 +6,9 @@
   "scripts": {
     "test": "playwright test",
     "test:api": "playwright test --project=api",
+    "test:local": "node scripts/test-local.mjs",
+    "api:up": "docker compose up -d --wait",
+    "api:down": "docker compose down --volumes",
     "test:headed": "playwright test --ui",
     "report": "playwright show-report",
     "typecheck": "tsc --noEmit"

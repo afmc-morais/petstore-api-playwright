@@ -28,7 +28,7 @@ jobs:
         run: npm run typecheck
 
       - name: Run API tests
-        run: npm run test:api
+        run: npm run test:local
 
       - name: Upload Playwright report
         if: always()
